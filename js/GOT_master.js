@@ -4,17 +4,31 @@
 
     const   sigils     = document.querySelectorAll('.sigil-container'),
             lightbox   = document.querySelector('.lightbox'),
-            video      = document.querySelector('video');
+            video      = document.querySelector('video'),
+            lbClose    = document.querySelector('.lightbox-close');
 
-    function openLightbox() {
-        lightbox.classList.add('lightbox-on');
+    function showLightbox() {
+        let targetHouse = this.className.split(" ")[1];
+
+        // this gives us a lowercase house name -> the second class on all of the shields ie statk
+        let targetVid = targetHouse.charAt(0).toUpperCase() + targetHouse.slice(1);
+
+        video.src = `video/House-${targetHouse}.mp4`;
+        lightbox.classList.add('show-lightbox');
+
+        video.load();
+        video.play();
     }
 
-    function closeLightbox() {
-        lightbox.classList.remove('lightbox-on');
+    function hideLightbox() {
+        lightbox.classList.remove('show-lightbox');
+
+        video.currentTime = 0;
+        video.pause();
     }
 
-    sigils.forEach(sigil => sigil.addEventListener('click', openLightbox));
+    sigils.forEach(sigil => sigil.addEventListener('click', showLightbox));
 
-    video.addEventListener('ended', closeLightbox);
+    video.addEventListener('ended', hideLightbox);
+    lbClose.addEventListener('click', hideLightbox);
 })();

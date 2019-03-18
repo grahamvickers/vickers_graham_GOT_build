@@ -5,7 +5,8 @@
     const   sigils     = document.querySelectorAll('.sigil-container'),
             lightbox   = document.querySelector('.lightbox'),
             video      = document.querySelector('video'),
-            lbClose    = document.querySelector('.lightbox-close');
+            lbClose    = document.querySelector('.lightbox-close'),
+            topBanners = document.querySelector('#houseImages');
 
     function showLightbox() {
         let targetHouse = this.className.split(" ")[1];
@@ -27,7 +28,17 @@
         video.pause();
     }
 
-    sigils.forEach(sigil => sigil.addEventListener('click', showLightbox));
+    function animateBanners() {
+      // move banners to the left so that the current house banner is visable
+      const offSet = 600;
+      let currentOffset = this.dataset.offset * offSet;
+
+      topBanners.style.right = currentOffset + "px";
+    }
+    // sigils.forEach(sigil => sigil.addEventListener('click', showLightbox));
+
+    // animate the banners at the top
+    sigils.forEach(sigil => sigil.addEventListener('click', animateBanners));
 
     video.addEventListener('ended', hideLightbox);
     lbClose.addEventListener('click', hideLightbox);

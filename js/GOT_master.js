@@ -30,10 +30,11 @@
 
     function animateBanners() {
       // move banners to the left so that the current house banner is visable
-      const offSet = 600;
+      // const offSet = 600;
       let currentOffset = this.dataset.offset * offSet;
 
-      topBanners.style.right = currentOffset + "px";
+      // topBanners.style.right = currentOffset + "px";
+      TweenMax.to(topBanners, 0.7 {right: currentOffset});
     }
     // sigils.forEach(sigil => sigil.addEventListener('click', showLightbox));
 

@@ -14,11 +14,30 @@ body { background-image:url(../images/grungeBG.jpg);
 	background-repeat:no-repeat; background-position:center center;
 	background-color:#000000; font-size:16px; }
 
+.hidden{
+  display: none;
+}
 h1 {
 	font-family: 'GOT_font';
 	color:white;
 	margin-top:30px;
 	font-size:1.25em;
+}
+
+.house-info{
+  color: white;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 60%;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.house-name{
+  letter-spacing: 1px;
+  font-size: 2rem;
 }
 
 main {
@@ -28,15 +47,17 @@ main {
 	top:30px;
 }
 
+
 #imageContainer {
 	width:600px;
 	height:360px;
-	background-color:grey;
+	background: rgba(0,0,0,0);
 	margin:0 auto;
 	overflow:hidden;
 }
+/* #houseImages { position:relative; width:4000px; transition: all .5s; } */
 
-#houseImages { position:relative; width:4000px; transition: all .5s; }
+#houseImages { position:relative; width:5400px;}
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -56,9 +77,9 @@ main {
 	height:54px;
 	display:inline-block;
 	overflow:hidden;
-	background-image:url(../images/GOT_sprites.png);
+	background-image:url(../images/GOT_sprites_v2.png);
 	background-repeat:no-repeat;
-	transition:transform .3s;
+	transition: transform .3s;
 	-webkit-transition:-webkit-transform .3s;
 	-moz-transition:-moz-transform .3s;
 }
@@ -80,6 +101,15 @@ main {
 
 .arryn { background-position:-253px -54px; }
 .arryn:hover { background-position:-253px 0px; }
+
+.targaryen { background-position:-304px -54px; }
+.targaryen:hover { background-position: -304px -1px; }
+
+.tyrell { background-position: -354px -54px; }
+.tyrell:hover { background-position: -354px -1px; }
+
+.frey { background-position: -404px -54px; }
+.frey:hover { background-position: -404px -1px; }
 /* ----- end image sprite ----- */
 
 /* ----- classes for transitions ----- */
@@ -94,7 +124,28 @@ main {
 	-moz-transform:scale(1.2, 1.2);
 	-webkit-transform:scale(1.2, 1.2);
 	transform:scale(1.2, 1.2);
+  
 }
+
+/* Icon styles */
+/* #iconContainer {
+	width:150px;
+	height:150px;
+	background: rgba(0,0,0,0);
+	margin:0 auto;
+	overflow:hidden;
+}
+
+#iconImages {
+  position:relative; width:1200px;
+}
+
+#houseImages img {
+  float:left;
+} */
+/* End of Icon styles */
+
+
 
 /* add styles here for lightbox and video */
 .lightbox{

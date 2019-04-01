@@ -53,6 +53,7 @@
 
       imgCon.classList.remove('hidden');
       title.classList.add('hidden');
+      
     }
 
     function showLightbox() {

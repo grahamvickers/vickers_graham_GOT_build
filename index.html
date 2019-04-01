@@ -2,24 +2,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DOM Traversal</title>
+<title>Game of Thrones</title>
 <link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="css/GOT_master.css" rel="stylesheet" type="text/css" media="screen">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 </head>
 
 <body>
     <main>
 
-    <section id="imageContainer">
-    	<div id="houseImages" style="right: 0px"> <!-- add in all of the images to make a scrolling "banner" -->
+    <section id="imageContainer" class="hidden">
+      <h2 class="hidden">Image Container</h2>
+    	<div id="houseImages" style="right: -600px"> <!-- add in all of the images to make a scrolling "banner" -->
     		<img src="images/stark.jpg"/>
     		<img src="images/baratheon.jpg"/>
     		<img src="images/lannister.jpg"/>
     		<img src="images/tully.jpg"/>
     		<img src="images/greyjoy.jpg"/>
     		<img src="images/arryn.jpg"/>
+        <img src="images/targaryen.jpg"/>
+        <img src="images/tyrell.jpg"/>
+        <img src="images/frey.jpg"/>
         </div>
     </section>
+
+    <img src="images/title_page.jpg" alt="Game of Thrones" id="titlePage">
 
     <nav id="bottomNav">
     	<ul id="navList">
@@ -30,16 +37,39 @@
             <li><div class="sigil-container tully" data-offset="3"></div></li>
             <li><div class="sigil-container greyjoy" data-offset="4"></div></li>
             <li><div class="sigil-container arryn" data-offset="5"></div></li>
+            <li><div class="sigil-container targaryen" data-offset="6"></div></li>
+            <li><div class="sigil-container tyrell" data-offset="7"></div></li>
+            <li><div class="sigil-container frey" data-offset="8"></div></li>
         </ul>
     </nav>
 
-    <h1>clever tagline goes here</h1><!-- replace this with the house name -->
+    <h1 class="house-name">Which House Are You?</h1><!-- replace this with the house name -->
 
-    <p class="house-info"></p><!-- replace this with house details (github gist) -->
+    <!-- replace this with house details (github gist) -->
+    <p class="house-info">
+
+    </p>
+<!-- 
+    <section id="iconContainer">
+      <h2 class="hidden">House Icons</h2>
+      <div id="icons" style="right: 0px">
+        <img src="images/stark_icon.jpg"/>
+    		<img src="images/baratheon_icon.jpg"/>
+    		<img src="images/lannister_icon.jpg"/>
+    		<img src="images/tully_icon.jpg"/>
+    		<img src="images/greyjoy_icon.jpg"/>
+    		<img src="images/arryn_icon.jpg"/>
+        <img src="images/targaryen_icon.jpg"/>
+        <img src="images/tyrell_icon.jpg"/>
+        <img src="images/frey_icon.jpg"/>
+      </div>
+    </section> -->
+
 </main>  <!--end mainContainer-->
 
 <!-- lightbox for highlighted content -->
 <section class="lightbox">
+  <h2 class="hidden">lightbox</h2>
   <span class="lightbox-close">X</span>
   <video src="video/House-Stark.mp4" controls muted></video>
 </section>

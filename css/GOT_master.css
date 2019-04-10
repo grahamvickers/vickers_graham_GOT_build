@@ -57,8 +57,35 @@ main {
 }
 /* #houseImages { position:relative; width:4000px; transition: all .5s; } */
 
-#houseImages { position:relative; width:5400px;}
-#houseImages img { float:left; }
+#houseImages {
+  position:relative;
+  width:5400px;
+}
+
+#houseImages img {
+  float:left;
+}
+
+
+#iconContainer {
+	width:128px;
+	height:128px;
+	background: rgba(0,0,0,0);
+	margin:0 auto;
+	overflow:hidden;
+}
+
+/* #houseImages { position:relative; width:4000px; transition: all .5s; } */
+
+#icons {
+  position:relative;
+  width: 1152px;
+}
+
+#icons img {
+  float:left;
+}
+
 
 #bottomNav { margin-top:30px; }
 
@@ -124,7 +151,7 @@ main {
 	-moz-transform:scale(1.2, 1.2);
 	-webkit-transform:scale(1.2, 1.2);
 	transform:scale(1.2, 1.2);
-  
+
 }
 
 /* Icon styles */
@@ -151,11 +178,12 @@ main {
 .lightbox{
   position: absolute;
   text-align: center;
-  width: 100%;
+  width: 80%;
   top: 0;
   background-color: rgba(0, 0, 0, 0.9);
   height: 100%;
   display: none;
+  margin-left: 10%;
 }
 
 .lightbox-close{
@@ -174,6 +202,6 @@ main {
 
 video {
 	width: 80%;
-	margin-top: 10%;
+	margin-top: 5%;
 	border: thin solid #949393;
 }

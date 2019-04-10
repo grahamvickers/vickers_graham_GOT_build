@@ -10,7 +10,9 @@
             tagline    = document.querySelector('.house-name'),
             houseInfo  = document.querySelector('.house-info'),
             imgCon     = document.querySelector('#imageContainer'),
-            title      = document.querySelector('#titlePage');
+            title      = document.querySelector('#titlePage'),
+            iconCon    = document.querySelector('#iconContainer'),
+            icon       = document.querySelector('#icons');
 
 // this is a container for some dynamic data
     const   houseData  =[
@@ -46,14 +48,32 @@
       TweenMax.to(topBanners, 0.7, { right: currentOffset });
       // .eventCallback("onComplete", showLightbox, null, this); this can go above
 
-      TweenMax.delayedCall(3, showLightbox, null, this);
 
+
+      // this allows the title and copy text to change on click
       tagline.textContent = `House ${houseData[this.dataset.offset][0]}`;
       houseInfo.textContent = houseData[this.dataset.offset][1];
 
+      // // this shows the house icon
+      // icon.innerHTML = `<img src="images/${this}_icon.svg" alt="${this}">`;
+
+      // allows the title page to be placed before any text or banner is shown
       imgCon.classList.remove('hidden');
       title.classList.add('hidden');
-      
+
+    }
+
+
+    // this function will allow the house icons to rotate through
+    function animateIcon(){
+
+      const offSet = 128;
+
+      let currentOffset = this.dataset.offset * offSet;
+
+      TweenMax.to(icon, 0.7, {right: currentOffset });
+
+      TweenMax.delayedCall(3, showLightbox, null, this);
     }
 
     function showLightbox() {
@@ -83,7 +103,7 @@
 
     // animate the banners at the top
     sigils.forEach(sigil => sigil.addEventListener('click', animateBanners));
-
+    sigils.forEach(sigil => sigil.addEventListener('click', animateIcon));
     video.addEventListener('ended', hideLightbox);
     lbClose.addEventListener('click', hideLightbox);
 })();
